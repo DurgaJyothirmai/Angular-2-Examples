@@ -1,0 +1,13 @@
+<div *ngFor="let info of studentDetails">
+  <p *ngIf = "info.Grade === 'A'">
+   Name : {{info.Name}}
+   Salary : {{info.Salary}}
+  </p>
+</div>
+
+<br><br><br>
+<!-- ngfor/ngif and ngstyle example -->
+<div *ngFor = "let names of personalInfo.Details">
+ <p *ngIf = "names.Place === 'Hyderabad'" [ngStyle]="{'color':'red','font-size':'22px','font-family': 'italic'}">{{names.Company}}</p>
+</div>
+

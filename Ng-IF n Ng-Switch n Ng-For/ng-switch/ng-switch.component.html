@@ -1,0 +1,9 @@
+<div [ngClass]="'one'">
+ <ul [ngSwitch]= "personName">
+   <li *ngSwitchCase= "'Radha'">Hello Radha..!</li> 
+   <li *ngSwitchCase= "'Subha'">Hello Subha!!</li>
+   <li *ngSwitchCase= "'Mohan'">Hello Mohan</li>
+   <li *ngSwitchDefault>Bye Bye</li>
+ </ul>
+</div>
+

@@ -1,0 +1,29 @@
+<form [formGroup]="modelDriven" (ngSubmit)="getInfo()">
+	Company Name <input type="text" formControlName="company_name">
+		<div *ngIf= "modelDriven.controls['company_name'].hasError('required')">
+		Please enter company name
+		</div>
+		<div *ngIf= "modelDriven.controls['company_name'].hasError('minlength')">
+		Please enter minimum of 5 characters
+		</div>
+		<div *ngIf= "modelDriven.controls['company_name'].hasError('maxlength')">
+		Maximum of 8 characters
+		</div>
+	<br>
+<div formGroupName="employee">
+	Designation <input type="text" formControlName="designation">
+		<div *ngIf= "modelDriven.controls['employee'].controls['designation'].hasError('required')">
+		Please enter designation
+		</div>
+		<br>
+	Password
+		<input type="password" formControlName="password">
+		<div *ngIf= "modelDriven.controls['employee'].controls['password'].hasError('required')">
+		Please enter password
+		</div>
+</div>
+<br>
+<button type="submit">Submit</button>
+</form>
+
+<app-model2></app-model2>

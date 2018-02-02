@@ -1,0 +1,20 @@
+Creating Model driven form using form builder
+<form [formGroup]="myForm" (ngSubmit)="getPersonalDetails()">
+FirstName <input type="text" formControlName="f_name">
+<div *ngIf="myForm.controls['f_name'].hasError('required')">Required
+</div>
+<span [hidden]="myForm.controls.f_name.minlength">Minimum of 5 characters</span>
+<br>
+LastName <input type="text" formControlName="l_name">
+<div *ngIf="myForm.controls['l_name'].hasError('required')">Required
+</div>
+<br>
+Gender <input type="radio" value="male" formControlName="gender">Male
+	<input type="radio" value="female" formControlName="gender">Female
+	<div *ngIf="myForm.controls['gender'].hasError('required')">Required
+</div><br>
+Company <input type="text" formControlName="comp_any">
+<div *ngIf="myForm.controls['comp_any'].hasError('required')">Required
+</div>
+<button type="submit">Click</button>
+</form>

@@ -1,0 +1,17 @@
+<p>Template driven forms</p>
+<form #form1="ngForm" (ngSubmit)="submitForm(form1.value)">
+	<div class="form-group">
+	 Name : <input type="text" class="form-control" name="fname" [(ngModel)]="person.name" #Name="ngModel" minlength="5">
+	 <span [hidden]="Name.valid">Minimum of 5 characters required</span>
+	</div>
+	<div class="form-group">
+	 Password : <input type="password" class="form-control" name="password" [(ngModel)]="person.Password" minlength="7" #Password="ngModel">
+	 <span [hidden]="Password.valid">Minimum of 7 characters required</span>
+	</div>
+	<div class="form-group">
+	Gender : <input type="radio" name = "gender" value="male" class="form-control" [(ngModel)]="person.Gender" #gender="ngModel">Male
+			<input type="radio" name = "gender" value="female" class="form-control" [(ngModel)]="person.Gender" #gender="ngModel">Female
+	</div>
+ <button type="submit">Submit</button>
+</form>
+<pre>{{forms | json}}</pre>
